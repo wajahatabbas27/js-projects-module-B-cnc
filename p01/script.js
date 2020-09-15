@@ -7,7 +7,7 @@ const password2 = document.getElementById('password2');
 
 //eventlistener bna rhe hain hm aur submit button pe call kr rhe hain hm 
 form.addEventListener('submit',function(e){
-    //e.preventDefault();           //isse hatega nhi console mein kuch bhi wrna hat jaega reload pe.
+    e.preventDefault();           //isse hatega nhi console mein kuch bhi wrna hat jaega reload pe.
     //console.log('submit');
     //console.log(username.value);
 
@@ -21,6 +21,8 @@ form.addEventListener('submit',function(e){
     if (email.value === ''){
         showError(email,'Email is Required');
 
+    } else if(!isValidEmail(email.value)){               //email check horhi hai ke sahi hai ya nhi mtlb valid hai ya nhi  
+        showError(email,'Email is invalid');
     }
     else {
         showSuccess(email);
@@ -61,4 +63,11 @@ function showSuccess(input){
     const formControl = input.parentElement;               //input ke parent ko access krrhe hain take class name change krlein override krke
     formControl.className= 'form-control success';
 
+}
+
+//function to check if email is valid 
+
+function isValidEmail(email){
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;  //regular expression se check hogi pori email
+    return re.test(String(email).toLowerCase());    //phr return hojaegi email
 }
