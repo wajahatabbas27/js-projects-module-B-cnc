@@ -10,9 +10,39 @@ form.addEventListener('submit',function(e){
     e.preventDefault();           //isse hatega nhi console mein kuch bhi wrna hat jaega reload pe.
     //console.log('submit');
     //console.log(username.value);
-    
-    //function bnaya hai checkRequired take baar baar call krna na pare
-    checkRequired([username,email,password,password2]);                    //array pass kia hai 
+
+    if (username.value === ''){
+        showError(username,'Username is Required');
+
+    }
+    else {
+        showSuccess(username);
+    }
+    if (email.value === ''){
+        showError(email,'Email is Required');
+
+    } else if(!isValidEmail(email.value)){               //email check horhi hai ke sahi hai ya nhi mtlb valid hai ya nhi  
+        showError(email,'Email is invalid');
+    }
+    else {
+        showSuccess(email);
+    }
+    if (password.value === ''){
+        showError(password,'Password is Required');
+
+    }
+    else {
+        showSuccess(password);
+    }
+    if (password2.value === ''){
+        showError(password2,'Confirm Password is Required');
+
+    }
+    else {
+        showSuccess(password2);
+    }
+
+
 })
 
 
@@ -41,35 +71,3 @@ function isValidEmail(email){
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;  //regular expression se check hogi pori email
     return re.test(String(email).toLowerCase());    //phr return hojaegi email
 }
-
-
-//function checkRequired
-function checkRequired(inputArray){
-    inputArray.forEach(function(input){                 //foreach high order array method hai aur inke andar hm function define krte hain take har input pe execute kre us function ko.
-
-        //console.log(input.value);                       //input.value se value ajaegi 
-
-        if (input.value === ''){
-            showError(input,`${getFieldId(input)} is required`);    //es6 template literal use krehain concatenation nhi krni pregi $(getFieldId(input ))   se direct call krrhe hain hm
-        }
-        else{
-            showSuccess(input);
-        }
-
-
-
-        
-    });
-}
-
-
-
-
-//function getfieldid take input id propercase mein ae
-
-function getFieldId(input){                              //take get field case set hojhae uska phla letter upper ho aur baki sare lowercase hn 
-    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
-}
-
-
-
