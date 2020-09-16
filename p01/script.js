@@ -12,7 +12,11 @@ form.addEventListener('submit',function(e){
     //console.log(username.value);
     
     //function bnaya hai checkRequired take baar baar call krna na pare
-    checkRequired([username,email,password,password2]);                    //array pass kia hai 
+    checkRequired([username,email,password,password2]);                    //array pass kia hai -checking if fields are filled or not.
+    checkLength(username,3,10);                                  //checking length of username
+    checkLength(password,6,30);
+    checkEmail(email);
+    checkPasswordMatch(password,password2);
 })
 
 
@@ -43,7 +47,7 @@ function isValidEmail(email){
 }
 
 
-//function checkRequired
+//function checkRequired to check all fiels are there
 function checkRequired(inputArray){
     inputArray.forEach(function(input){                 //foreach high order array method hai aur inke andar hm function define krte hain take har input pe execute kre us function ko.
 
@@ -55,10 +59,6 @@ function checkRequired(inputArray){
         else{
             showSuccess(input);
         }
-
-
-
-        
     });
 }
 
@@ -72,4 +72,37 @@ function getFieldId(input){                              //take get field case s
 }
 
 
+//function check length of input values
 
+function checkLength(input,min,max){
+    if (input.value < min){
+        showError(input,`${getFieldId(input)} needs to be atleast ${min} characters`);
+    }
+    else if (input.value > max){
+        showError(input,`${getFieldId(input)} needs to be less than ${max} characters`)
+    }
+    else{
+        showSuccess(input);
+    }
+}
+
+
+//function checking email format for validation
+
+function checkEmail(input){
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;  //regular expression se check hogi pori email
+    if (re.test(input.value.trim())){
+        showSuccess(input);
+    }else{
+        showError(input,'please provide a valid email')
+    }
+}
+
+
+//function to check if password and confirm password match
+
+function checkPasswordMatch(input1,input2){
+    if (input1.value !==input2.value){            //.value likhna zroori hai take value ko check kre apas mein
+        showError(input2,'passwords donot match');
+    }
+}
