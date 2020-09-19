@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
+
+*{
+    box-sizing: border-box;    
+}
+
+body{
+    background-color:slategray;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;             /*height set ho gae hai  isse body ki */
+    font-family: 'Lato', sans-serif;     /* yh wo hai font jo import kraya hai wahin se isko leke ae hain*/
+    margin: 0;
+}
+
+.movie-container {
+    margin: 20px;
+}
+
+.movie-container select {
+    background-color: white;
+    border: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 5px 15px 5px 15px;
+    appearance: none;
+    -moz-appearance: none;           /* browser support ke liye hai yh */
+    -webkit-appearance: none;
+    color: black;
+}
+
+.seat {
+    background-color: darkgray;
+    height: 12px;
+    width: 15px;
+    margin: 3px;        /* to show gap between seats */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;   /*shape dene ke liye hai yh seats ko uper se */
+}
+
+
+
+.row {
+    display: flex;
+
+}
+
+.seat.selected{                      
+    background-color: aqua;
+}
+
+.seat.occupied{
+    background-color: white;
+}
+
+
+
+.seat:nth-of-type(2){
+    margin-right: 18px;         /*do seats ke baad gap ke liye path bnaya hai */
+}
+
+
+.seat:nth-last-of-type(2){      /* last do seats se phle ka hai yh bnaya hai gap */
+    margin-left: 18px;
+}
+
+
+
+.seat:not(.occupied):hover{     /*occupy ke ilawa sari seats hover hngi aur uper aeingi */
+    cursor: pointer;            /*jb cursor pointer aega uspe to hover kre use */
+    transform: scale(1.2);      /*jb hover ho to transform hojaega hath aega banawa */
+}
+
+
+.legend.seat:not(.occupied):hover{       /*legend ki seats nhi krni hover hmne*/
+    cursor:default;                      /*default hi hoga cursor hm nhi chahte kuch ho */
+    transform:scale(1);                  /*hat bhi bara bnawa na ae */
+}
+
+
+
+.legend{
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: lightgray;
+    list-style-type: none;           /* bullets hatane ke liye */
+    display: flex;                   /* vertical tha horizontal hogya*/
+    justify-content: space-between;
+}
+
+
+.legend li{
+    display: flex;         /* horizontal hojaeingi seats aur li */
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+
+.legend li small{
+    margin-left: 2px;
+}
+
+
+
+.screen{                     /* screen bnai hai hmne 3d usko show krne ke liye style krna zroori hai */
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    margin: 15px 0;
+    transform:rotateX(-45deg);   /* 3d look ke liye krrhe hain yh */
+    box-shadow: 0 8px 10px rgba(255, 255, 255, 0.7);    /* glow krne ke liye hai yh */
+}
+
+.container{
+    perspective: 1000px;         /* 3D look derha hai yh */
+    margin-bottom: 30px;
+}
+
+
+p.text{
+    margin: 5px 0;
+}
+
+p.text span{
+    color:aqua;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
