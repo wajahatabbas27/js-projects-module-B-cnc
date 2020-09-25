@@ -31,7 +31,7 @@ container.addEventListener('click',e => {           // yh btarha hai jb click ho
 //function bna rhe hain take toggle seats ka total aur count display kradein screen pe.
 
 function updateselectedcount(){
-    const selectedSeats = document.querySelectorAll('.row.seat.selected');
+    const selectedSeats = document.querySelectorAll('.row .seat.selected');                //row mein jo selected seats hain unko get krrha hai row ke baat space aega zara sa
     //console.log(selectedSeats); //node list aegi pori jo selected seats hngi 
     const countSelectedSeats = selectedSeats.length;
     //console.log(countSelectedSeats);  length show krega kitni seats selected hain unki yh 
