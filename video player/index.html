@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video player</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/progress.css">
+</head>
+<body>
+    <h1>Video Player</h1>
+    <!-- this video tags creates a video box for us and show screen from this tag for the video -->
+    <video src="assets/videos/WhatsApp Video 2020-09-28 at 7.18.24 PM.mp4" class="screen" id="video" poster="assets/images/video-play-icon-22.jpg" ></video>
+    
+    <!-- hmein controls khud bnane hain yhn pe ab aur, controls stop button aur play/pause button hai -->
+    <div class="controls">
+        <button class="btn" id="play">
+            <i class="fas fa-play fa-2x"></i>
+        </button>
+        <button class="btn" id="stop">
+            <i class="fas fa-stop fa-2x"></i>
+        </button>
+    </div>
+
+    <!--slider bar progress bar video ke liye lgarhe hain-->
+    <input type="range" id="progress" class="progress" min="0" max="100" step="0.1" value="0" >
+
+    <!-- timer add kreinge hm video ka chalne ka to span element use kreinge hm.-->
+    <span class="timestamp" id="timestamp">00:00</span>
+    
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/6f3cd3b37e.js" crossorigin="anonymous"></script>
+</body>
+</html>
