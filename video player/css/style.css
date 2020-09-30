@@ -22,7 +22,7 @@ h1{
 .screen{
     cursor: pointer;
     width: 60%;
-    background-color: black important;
+    background-color: black !important;
 }
 
 .controls{
