@@ -58,6 +58,7 @@ p{
     padding: 10px 20px;
     border: 1px solid lightgrey;
     font-size: 16px;
+    width: 50%;
 }
 
 
@@ -67,7 +68,7 @@ p{
     color: white;
     font-size: 28px;
     text-align: right;
-    width: 100px;
+    width: 50%;
 }
 
 
