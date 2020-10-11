@@ -40,9 +40,9 @@ function updateDom(inputData = data) {
     main.innerHTML = `<h2><strong>Name</strong> NetWorth</h2>`;
 
     inputData.forEach(item => {                           //foreach har aik element pe chalega
-        const element = document.createElement('div');            //div element creat kra hai create element se 
-        element.classList.add('name');                            //phir element mein class list mein add kreinge hm name
-        element.innerHTML = `<h2><strong>${item.name}</strong> ${formatCurrency(item.worth)}</h2>`;                       //phir innerhtml ko update krrhe hain hm 
+        const element = document.createElement('div');            //div element create kra hai create element se 
+        element.classList.add('name');                            //phir element mein class list mein add kreinge hm name ,class di hai hmne element ko 
+        element.innerHTML = `<strong>${item.name}</strong>${formatCurrency(item.worth)}`;                       //phir innerhtml ko update krrhe hain hm 
         main.appendChild(element);         //main jo section hai html mein wahan append krdia hai hmne data apna
 
     });
@@ -85,9 +85,9 @@ function sortRichest() {                               //function bnaya hai take
 showMillionairesButton.addEventListener('click', showMillionaires);
 
 
-function showMillionaires {                        //show millionaire function se khalire milliionaires nazar aeinge screen pe
+function showMillionaires(){                        //show millionaire function se khalire milliionaires nazar aeinge screen pe
     data = data.filter(                              //filter function filter krdega jo nhi hnge
-        items => item.worth > 1000000
+        item => item.worth > 1000000
     );
 
     updateDom();                               //filter hogae hain ab screen ko update krdo
@@ -98,7 +98,7 @@ function showMillionaires {                        //show millionaire function s
 //5- calculate total wealth event listener
 totalButton.addEventListener('click', calculateTotalNetworth);
 
-function calculateTotalNetworth{                   //total networth add hojaeinge sbke btadega yh
+function calculateTotalNetworth(){                   //total networth add hojaeinge sbke btadega yh
     //reduce array ka method use kreinge yhn aik value return krta hai bs 
     const totalWorth = data.reduce(
         (acc, item) => (acc+= item.worth), 0            //add krrhe hain hm bas sare items ki wealth ko aur start 0 index se hoga 
@@ -106,7 +106,8 @@ function calculateTotalNetworth{                   //total networth add hojaeing
 
     //screen pe show kra rhe hain to create element kreinge
     const totalWorthElement = document.createElement('div');
-    totalWorthElement.innerHTML = `<h3> Total Net Worth: <strong>${formatCurrency (totalWorth)}</strong></h3>`
+    totalWorthElement.innerHTML = `<h3> Total NetWorth: <strong>${formatCurrency(totalWorth)}</strong></h3>`
+    main.appendChild(totalWorthElement);
 }
 
 
