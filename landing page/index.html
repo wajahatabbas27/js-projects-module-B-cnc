@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <!--font awesome cdn 5 se link copy krke lae hain-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+</head>
+
+<body>
+    <!--nav bar left side pe jo hai use code krrhe hain hm-->
+    <nav>
+        <div class="logo">
+            <img src="img/83248461_1101889940176762_3027484561043881984_o.jpg" alt="image">
+        </div>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Syllabus</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+
+    </nav>
+
+    <!--header html-5 element ko design kreinge-->
+    <header>
+        <button id="toggle" class="toggle">
+            <i class="fa fa-bars fa-2x"></i>
+        </button>
+
+        <h1>Landing Page</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, quasi optio fugit consequuntur ad quam rerum
+            harum ut eveniet. Error rerum reprehenderit dolor quod similique asperiores molestias neque placeat laborum!
+        </p>
+
+        <button id="open" class="apply">Apply Now</button>
+    </header>
+
+    <!--main body ko structure krrhe hain-->
+    <div class="container">
+        <h2>Cloud Native Computing</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, distinctio ad quis recusandae consequatur
+            est officiis magnam, nobis impedit amet provident deleniti, totam nisi quod itaque libero! Fuga, vel fugit!
+            Porro incidunt odit eos libero quaerat possimus molestiae, laudantium culpa aspernatur suscipit et! Sint
+            quam quaerat voluptatem unde odio velit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nisi quia magni necessitatibus adipisci
+            laboriosam tempora explicabo, eum quis eligendi dolore neque dolor, repellat rem sit quos perspiciatis
+            excepturi, architecto accusantium consequatur quae officiis. Est, illum voluptates in dolorem explicabo
+            quasi reprehenderit deserunt ratione, sed, reiciendis perferendis deleniti quod! Assumenda magni aspernatur
+            aliquam voluptas sequi alias natus, ut dolor porro incidunt. Soluta voluptates numquam incidunt quos ex
+            omnis facilis eligendi fugiat iusto delectus. In vero, quae ad voluptas modi obcaecati labore quasi harum a
+            sint perferendis maiores. Repellat sequi molestiae, provident, eos asperiores voluptates sed saepe dicta
+            deserunt sint vero!</p>
+
+        <h2>More Information</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis pariatur tempora ea ad rerum nihil, iusto
+            aliquam eveniet enim quasi recusandae laboriosam id obcaecati accusamus cumque voluptate impedit ipsam
+            totam!</p>
+
+        <h2>Syllabus</h2>
+        <ul>
+            <li>Project 1</li>
+            <li>Project 2</li>
+            <li>Project 3</li>
+        </ul>
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, quo dolores! Quos soluta ullam, iste
+            incidunt consectetur beatae excepturi dignissimos maiores vel, provident minus porro architecto,
+            exercitationem placeat dolor aut repellat perferendis quam aliquam reiciendis sapiente voluptatem deleniti
+            fugit! Repellendus magni sunt, consectetur rem tempore, expedita eius dolorum asperiores voluptate in
+            nostrum molestias voluptatem fugit unde harum molestiae illo aut. Mollitia minima fuga ipsam exercitationem
+            corporis hic excepturi laudantium maxime molestias explicabo natus animi porro voluptatibus dicta ducimus
+            aperiam dolorum, cupiditate magnam labore culpa neque. Aut, reprehenderit. Distinctio perspiciatis aperiam
+            sint doloribus, eum, repudiandae totam, veritatis tempora necessitatibus magni unde.</p>
+
+    </div>
+
+    <!--div for modal window-->
+    <div class="modal-container" id="modal">
+
+        <div class="modal">
+
+            <button class="close-btn" id="close">
+                <i class="fa fa-times"></i>
+            </button>
+
+            <div class="modal-header">
+                Apply
+            </div>
+
+            <div class="modal-content">
+                <p>To sign up for classes please submit this form.</p>
+
+                <form class="modal-form">
+                    <div>
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter FullName" class="form-input">
+                    </div>
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="text" id="name" placeholder="Enter Email" class="form-input">
+                    </div>
+
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter Password" class="form-input">
+                    </div>
+
+                    <div>
+                        <label for="password2">Confirm Password</label>
+                        <input type="text" id="password" placeholder="Confirm Password" class="form-input">
+                    </div>
+
+                    <input type="submit" value="Submit" class="submit-btn"> 
+                </form>
+                
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
