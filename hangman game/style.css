@@ -23,7 +23,7 @@ body{
 }
 
 .hangman-part{
-    display: ;
+    display:none;
 }
 
 h1{
@@ -82,7 +82,7 @@ h1{
     right: 0;
     align-items: center;
     justify-content: center;
-    /*display:none;*/
+    display:none;
 }
 
 .popup{
