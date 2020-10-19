@@ -43,40 +43,40 @@ function displaySelectedWord() {
 
 }
 
-displaySelectedWord();
+
 
 
 //function to display slider Notification
-function showNotification(){
+function showNotification() {
     notification.classList.add('show');                             //show add hojae notification ki class list mein hmare paas take wo uper aake show hojae screen pe
-    setTimeout( () => {notification.classList.remove('show')} , 3000);     //3000ms mtlb 3s timeout hai 
+    setTimeout(() => { notification.classList.remove('show') }, 3000);     //3000ms mtlb 3s timeout hai 
 }
 
 
 //function to update wrongletters on screen
 //hangman parts nazar ae
 //wrong letters nazar ae
-function updateWrongLetters(){
+function updateWrongLetters() {
     wrongLetters.innerHTML = `
     ${incorrectLetters.length > 0 ? `<p>Wrong Letters </p>` : ''} 
     ${incorrectLetters.map(letter => `<span>${letter}</span>`)}
     `;               //html mein wrong letters heading ajaegi aur letters show hnge isfunction se hmare paas
-    
+
     //hangman parts show krane keliye
-    hangmanParts.forEach((part,index) => {
+    hangmanParts.forEach((part, index) => {
         const error = incorrectLetters.length;
-        if (index < error){
-            part.style.display = 'block' ;                //jb galti ho to block mein hangman part show krade yh
+        if (index < error) {
+            part.style.display = 'block';                //jb galti ho to block mein hangman part show krade yh
         }
-        else{
+        else {
             part.style.display = 'none';                  //aur jb galtiyan bhot ziada hojaein to phir yh none show krae hmare paas
         }
     });
 
     //show popup if lost
-    if(incorrectLetters.length === hangmanParts.length){
-        message.innerText='You Lost!';                   //message se yh message show hoga
-        popup.style.display = 'flex' ;                   //flex mein show hojae screen pe yh
+    if (incorrectLetters.length === hangmanParts.length) {
+        message.innerText = 'You Lost!';                   //message se yh message show hoga
+        popup.style.display = 'flex';                   //flex mein show hojae screen pe yh
     }
 
 }
@@ -94,19 +94,20 @@ window.addEventListener('keydown', e => {
                 correctLetters.push(letter);
                 displaySelectedWord();
             }
-            else{
+            else {
                 showNotification();                 //slider ke liye function bnaya hai hmne
             }
         }
 
-    }
-    else{
-        if(!incorrectLetters.includes(letter)){
-            incorrectLetters.push(letter);
-            updateWrongLetters();                  //wrong letters ke liye function bnarhe hain hm
-        }
-        else{
-            showNotification();
+
+        else {
+            if (!incorrectLetters.includes(letter)) {
+                incorrectLetters.push(letter);
+                updateWrongLetters();                  //wrong letters ke liye function bnarhe hain hm
+            }
+            else {
+                showNotification();
+            }
         }
     }
 })
@@ -120,7 +121,7 @@ restartButton.addEventListener('click', () => {
     incorrectLetters.splice(0);
 
     //get a new selected word from the pool
-    selectedWord = wordPool[Math.floor(Math.random() * wordPool.length)];
+    let selectedWord = wordPool[Math.floor(Math.random() * wordPool.length)];              //let lgega kioke change horha hai variable uper bhi
 
     displaySelectedWord();
 
@@ -128,7 +129,7 @@ restartButton.addEventListener('click', () => {
     updateWrongLetters();
 
     //hide the popup
-    popup.style.display='none';
+    popup.style.display = 'none';
 
 
 
@@ -136,7 +137,7 @@ restartButton.addEventListener('click', () => {
 
 
 
-
+displaySelectedWord();
 
 
 
