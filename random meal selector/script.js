@@ -3,7 +3,7 @@ const search = document.getElementById('search');
 const submit = document.getElementById('submit');
 const random = document.getElementById('random');
 const mealContainer = document.getElementById('meals');
-const resultHeading = document.getElementById('result-eading');
+const resultHeading = document.getElementById('result-heading');
 const selectedMeal = document.getElementById('selected-meals');
 
 //function searchMeal
