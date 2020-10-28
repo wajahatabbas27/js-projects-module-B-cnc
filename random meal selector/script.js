@@ -66,7 +66,7 @@ function getMealByID(mealID) {
 //function to add a meal to DOM
 function addMealToDOM(meal) {
     const ingredients = [];   //20 hain ingredients array empty meinpush kreinge api se
-    
+
     for (let i = 1; i <= 20; i++) {
         if (meal[`strIngredient${i}`]) {
             //ingredient mein push kreinge 
@@ -96,7 +96,7 @@ function addMealToDOM(meal) {
     ${ingredients.map(ingredient =>
         `<li>${ingredient}</li>`
     )
-        .join('')}
+            .join('')}
         </ul>
         </div>
         </div>
@@ -118,12 +118,14 @@ mealContainer.addEventListener('click', e => {
         else {
             return false
         }
-        //agar meal-info agae hai to ab usse meal id get kreinge hm take idse uski recipe leke aein hm
-
-        if (mealInfo) {
-            const mealID = mealInfo.getAttribute('data-mealid');
-            getMealByID(mealID);                    //function call krrhe hain hm 
-        }
 
     })
+    //agar meal-info agae hai to ab usse meal id get kreinge hm take idse uski recipe leke aein hm
+
+    if (mealInfo) {
+        const mealID = mealInfo.getAttribute('data-mealid');
+        getMealByID(mealID);                    //function call krrhe hain hm 
+    }
+
+
 })
